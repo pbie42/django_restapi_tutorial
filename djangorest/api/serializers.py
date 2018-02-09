@@ -4,6 +4,7 @@ from .models import Bucketlist
 class BucketlistSerializer(serializers.ModelSerializer):
 	"""Serializer to map the Model instance into JSON format."""
 
+	# Owner field is read only so a user using the api can not change the owner
 	owner = serializers.ReadOnlyField(source='owner.username')
 
 	class Meta:
